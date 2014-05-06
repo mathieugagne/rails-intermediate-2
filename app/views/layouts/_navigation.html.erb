@@ -11,14 +11,14 @@
   <li class='disabled'>
     <a href="#" ><h4>Pagination</h4></a>
   </li>
-  <li class="<%= 'active' if current_page?('/html-document-structure') %>">
-    <%= link_to 'Add Kaminari', html_document_structure_path %>
+  <li class="<%= 'active' if current_page?('/add-kaminari') %>">
+    <%= link_to 'Add Kaminari', add_kaminari_path %>
   </li>
-  <li class="<%= 'active' if current_page?('/html5') %>">
-    <%= link_to 'Install views & customize', html5_path %>
+  <li class="<%= 'active' if current_page?('/customize-views') %>">
+    <%= link_to 'Install Views & Customize', customize_views_path %>
   </li>
-  <li class="<%= 'active' if current_page?('/layouts-and-rendering') %>">
-    <%= link_to 'Presenter Pattern', layouts_and_rendering_path %>
+  <li class="<%= 'active' if current_page?('/presenter-pattern') %>">
+    <%= link_to 'Presenter Pattern', presenter_pattern_path %>
   </li>
 </ul>
 
@@ -26,14 +26,14 @@
   <li class='disabled'>
     <a href="#" ><h4>Upload files</h4></a>
   </li>
-  <li class="<%= 'active' if current_page?('/html-document-structure') %>">
-    <%= link_to 'Install Carrierwave', html_document_structure_path %>
+  <li class="<%= 'active' if current_page?('/install-carrierwave') %>">
+    <%= link_to 'Install Carrierwave', install_carrierwave_path %>
   </li>
-  <li class="<%= 'active' if current_page?('/html5') %>">
-    <%= link_to 'Add Documents to Projects', html5_path %>
+  <li class="<%= 'active' if current_page?('/add-documents-to-projects') %>">
+    <%= link_to 'Add Documents to Projects', add_documents_to_projects_path %>
   </li>
-  <li class="<%= 'active' if current_page?('/layouts-and-rendering') %>">
-    <%= link_to 'Generate Thumbnails', layouts_and_rendering_path %>
+  <li class="<%= 'active' if current_page?('/generate-thumbnails') %>">
+    <%= link_to 'Generate Thumbnails', generate_thumbnails_path %>
   </li>
 </ul>
 
@@ -41,14 +41,14 @@
   <li class='disabled'>
     <a href="#" ><h4>Email Notifications</h4></a>
   </li>
-  <li class="<%= 'active' if current_page?('/css-definition-examples') %>">
-    <%= link_to 'ActionMailer', css_definition_examples_path %>
+  <li class="<%= 'active' if current_page?('/action-mailer') %>">
+    <%= link_to 'ActionMailer', action_mailer_path %>
   </li>
-  <li class="<%= 'active' if current_page?('/css-frameworks') %>">
-    <%= link_to 'Add HTML email template', css_frameworks_path %>
+  <li class="<%= 'active' if current_page?('/html-email-template') %>">
+    <%= link_to 'Add HTML Email Template', html_email_template_path %>
   </li>
-  <li class="<%= 'active' if current_page?('/grid-system') %>">
-    <%= link_to 'Threading with SuckerPunch', grid_system_path %>
+  <li class="<%= 'active' if current_page?('/threading-with-suckerpunch') %>">
+    <%= link_to 'Threading with SuckerPunch', threading_with_suckerpunch_path %>
   </li>
 </ul>
 
@@ -56,14 +56,14 @@
   <li class='disabled'>
     <a href="#" ><h4>Tags</h4></a>
   </li>
-  <li class="<%= 'active' if current_page?('/css-definition-examples') %>">
-    <%= link_to 'Install ActsAsTaggableOn', css_definition_examples_path %>
+  <li class="<%= 'active' if current_page?('/install-ActsAsTaggableOn') %>">
+    <%= link_to 'Install ActsAsTaggableOn', install_ActsAsTaggableOn_path %>
   </li>
-  <li class="<%= 'active' if current_page?('/css-frameworks') %>">
-    <%= link_to 'Install select2-rails', css_frameworks_path %>
+  <li class="<%= 'active' if current_page?('/install-select2-rails') %>">
+    <%= link_to 'Install select2-rails', install_select2_rails_path %>
   </li>
-  <li class="<%= 'active' if current_page?('/grid-system') %>">
-    <%= link_to 'Autocomplete Tags', grid_system_path %>
+  <li class="<%= 'active' if current_page?('/autocomplete-tags') %>">
+    <%= link_to 'Autocomplete Tags', autocomplete_tags_path %>
   </li>
 </ul>
 
@@ -71,20 +71,20 @@
   <li class='disabled'>
     <a href="#" ><h4>Full-Text Search</h4></a>
   </li>
-  <li class="<%= 'active' if current_page?('/dom-manipulation') %>">
-    <%= link_to 'Install Solr with Sunspot', dom_manipulation_path %>
+  <li class="<%= 'active' if current_page?('/install-solr-with-sunspot') %>">
+    <%= link_to 'Install Solr with Sunspot', '/install-solr-with-sunspot' %>
   </li>
-  <li class="<%= 'active' if current_page?('/js-libraries') %>">
-    <%= link_to 'Index Projects', js_libraries_path %>
+  <li class="<%= 'active' if current_page?('/index-projects') %>">
+    <%= link_to 'Index Projects', '/index-projects' %>
   </li>
-  <li class="<%= 'active' if current_page?('/coffeescript') %>">
-    <%= link_to 'Add Search Form', coffeescript_path %>
+  <li class="<%= 'active' if current_page?('/add-search-form') %>">
+    <%= link_to 'Add Search Form', '/add-search-form' %>
   </li>
-  <li class="<%= 'active' if current_page?('/coffeescript') %>">
-    <%= link_to 'Facet Tags', coffeescript_path %>
+  <li class="<%= 'active' if current_page?('/facet-tags') %>">
+    <%= link_to 'Facet Tags', '/facet-tags' %>
   </li>
-  <li class="<%= 'active' if current_page?('/coffeescript') %>">
-    <%= link_to 'Revamp Layout with Sidebar', coffeescript_path %>
+  <li class="<%= 'active' if current_page?('/revamp-layout-with-sidebar') %>">
+    <%= link_to 'Revamp Layout with Sidebar', '/revamp-layout-with-sidebar' %>
   </li>
 </ul>
 
@@ -92,7 +92,7 @@
   <li class='disabled'>
     <a href="#" ><h4>Want more?</h4></a>
   </li>
-  <li class="<%= 'active' if current_page?('/dom-manipulation') %>">
-    <%= link_to 'Add CKEditor WYSIWYG', dom_manipulation_path %>
+  <li class="<%= 'active' if current_page?('/add-ckeditor-wysiwyg') %>">
+    <%= link_to 'Add CKEditor WYSIWYG', '/add-ckeditor-wysiwyg' %>
   </li>
 </ul>
