@@ -1,56 +1,28 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  get '/getting-started', to: 'steps#getting_started'
+  get '/front-end-in-rails', to: 'steps#front_end_in_rails'
+  get '/html-document-structure', to: 'steps#html_document_structure'
+  get '/html-css-js', to: 'steps#html_css_js'
+  get '/html5', to: 'steps#html5'
+  get '/rails-templates-helper-methods', to: 'steps#rails_templates_helper_methods'
+  get '/layouts-and-rendering', to: 'steps#layouts_and_rendering'
+  get '/css-definition-examples', to: 'steps#css_definition_examples'
+  get '/css-frameworks', to: 'steps#css_frameworks'
+  get '/grid-system', to: 'steps#grid_system'
+  get '/css3', to: 'steps#css3'
+  get '/css-techniques', to: 'steps#css_techniques'
+  get '/scss', to: 'steps#scss'
+  get '/smacss', to: 'steps#smacss'
+  get '/dom-manipulation', to: 'steps#dom_manipulation'
+  get '/js-libraries', to: 'steps#js_libraries'
+  get '/jquery-tutorial', to: 'steps#jquery_tutorial'
+  get '/turbolinks', to: 'steps#turbolinks'
+  get '/coffeescript', to: 'steps#coffeescript'
+  get '/ajax', to: 'steps#ajax'
+  get '/weather-widget', to: 'steps#weather_widget'
+  get '/better-alerts', to: 'steps#better_alerts'
+  get '/next-steps', to: 'steps#next_steps'
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
-
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  root to: 'steps#overview'
 end

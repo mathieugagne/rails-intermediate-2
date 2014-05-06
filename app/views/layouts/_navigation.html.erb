@@ -1,0 +1,98 @@
+<ul class="nav nav-sidebar">
+  <li class="<%= 'active' if current_page?('/') %>">
+    <%= link_to 'Overview', root_path %>
+  </li>
+  <li class="<%= 'active' if current_page?('/getting-started') %>">
+    <%= link_to 'Getting Started', getting_started_path %>
+  </li>
+</ul>
+
+<ul class="nav nav-sidebar">
+  <li class='disabled'>
+    <a href="#" ><h4>Pagination</h4></a>
+  </li>
+  <li class="<%= 'active' if current_page?('/html-document-structure') %>">
+    <%= link_to 'Add Kaminari', html_document_structure_path %>
+  </li>
+  <li class="<%= 'active' if current_page?('/html5') %>">
+    <%= link_to 'Install views & customize', html5_path %>
+  </li>
+  <li class="<%= 'active' if current_page?('/layouts-and-rendering') %>">
+    <%= link_to 'Presenter Pattern', layouts_and_rendering_path %>
+  </li>
+</ul>
+
+<ul class="nav nav-sidebar">
+  <li class='disabled'>
+    <a href="#" ><h4>Upload files</h4></a>
+  </li>
+  <li class="<%= 'active' if current_page?('/html-document-structure') %>">
+    <%= link_to 'Install Carrierwave', html_document_structure_path %>
+  </li>
+  <li class="<%= 'active' if current_page?('/html5') %>">
+    <%= link_to 'Add Documents to Projects', html5_path %>
+  </li>
+  <li class="<%= 'active' if current_page?('/layouts-and-rendering') %>">
+    <%= link_to 'Generate Thumbnails', layouts_and_rendering_path %>
+  </li>
+</ul>
+
+<ul class="nav nav-sidebar">
+  <li class='disabled'>
+    <a href="#" ><h4>Email Notifications</h4></a>
+  </li>
+  <li class="<%= 'active' if current_page?('/css-definition-examples') %>">
+    <%= link_to 'ActionMailer', css_definition_examples_path %>
+  </li>
+  <li class="<%= 'active' if current_page?('/css-frameworks') %>">
+    <%= link_to 'Add HTML email template', css_frameworks_path %>
+  </li>
+  <li class="<%= 'active' if current_page?('/grid-system') %>">
+    <%= link_to 'Threading with SuckerPunch', grid_system_path %>
+  </li>
+</ul>
+
+<ul class="nav nav-sidebar">
+  <li class='disabled'>
+    <a href="#" ><h4>Tags</h4></a>
+  </li>
+  <li class="<%= 'active' if current_page?('/css-definition-examples') %>">
+    <%= link_to 'Install ActsAsTaggableOn', css_definition_examples_path %>
+  </li>
+  <li class="<%= 'active' if current_page?('/css-frameworks') %>">
+    <%= link_to 'Install select2-rails', css_frameworks_path %>
+  </li>
+  <li class="<%= 'active' if current_page?('/grid-system') %>">
+    <%= link_to 'Autocomplete Tags', grid_system_path %>
+  </li>
+</ul>
+
+<ul class="nav nav-sidebar">
+  <li class='disabled'>
+    <a href="#" ><h4>Full-Text Search</h4></a>
+  </li>
+  <li class="<%= 'active' if current_page?('/dom-manipulation') %>">
+    <%= link_to 'Install Solr with Sunspot', dom_manipulation_path %>
+  </li>
+  <li class="<%= 'active' if current_page?('/js-libraries') %>">
+    <%= link_to 'Index Projects', js_libraries_path %>
+  </li>
+  <li class="<%= 'active' if current_page?('/coffeescript') %>">
+    <%= link_to 'Add Search Form', coffeescript_path %>
+  </li>
+  <li class="<%= 'active' if current_page?('/coffeescript') %>">
+    <%= link_to 'Facet Tags', coffeescript_path %>
+  </li>
+  <li class="<%= 'active' if current_page?('/coffeescript') %>">
+    <%= link_to 'Revamp Layout with Sidebar', coffeescript_path %>
+  </li>
+</ul>
+
+<ul class="nav nav-sidebar">
+  <li class='disabled'>
+    <a href="#" ><h4>Want more?</h4></a>
+  </li>
+  <li class="<%= 'active' if current_page?('/dom-manipulation') %>">
+    <%= link_to 'Add CKEditor WYSIWYG', dom_manipulation_path %>
+  </li>
+</ul>
