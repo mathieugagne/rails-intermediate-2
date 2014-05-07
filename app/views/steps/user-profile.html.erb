@@ -45,7 +45,7 @@
   &lt;% @projects.each do |p| %&gt;
     &lt;li class="list-group-item"&gt;
       &lt;span class="pull-right"&gt;&lt;%= project_status_label(p.status) %&gt;&lt;/span&gt;
-      &lt;%= p.title %&gt;
+      &lt;%= link_to p.title, p %&gt;
     &lt;/li&gt;
   &lt;% end %&gt;
 &lt;/ul&gt;</code></pre>
