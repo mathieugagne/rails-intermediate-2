@@ -1,3 +1,31 @@
 <h1 class="page-header">Add Kaminari</h1>
 
-<h3>TO DO</h3>
+<blockquote>
+  <p>Our project list is growing beyond reason! Add pagination to help users browse the list.</p>
+</blockquote>
+
+<h3>Step 1</h3>
+<blockquote>
+  <p>Add <code>kaminari</code> to your Gemfile</p>
+  <pre><code>gem 'kaminari', github: 'amatsuda/kaminari'</code></pre>
+</blockquote>
+
+<h3>Step 2</h3>
+<blockquote>
+  <p>Run Bundler</p>
+  <pre><code>bundle</code></pre>
+</blockquote>
+
+<h3>Step 3</h3>
+<blockquote>
+  <p>Add <code>.page(params[:page])</code> to your <code>projects#index</code> controller action.</p>
+  <pre><code>def index
+  @projects = Project.order(sort_column => sort_direction).page(params[:page]).per(10)
+end</code></pre>
+</blockquote>
+
+<h3>Step 4</h3>
+<blockquote>
+  <p>Add <code>pagination_tag</code> helper method to your <code>projects#index</code> view.</p>
+  <pre><code>&lt;%= paginate @projects %&gt;</code></pre>
+</blockquote>

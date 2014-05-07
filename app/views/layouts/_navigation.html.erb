@@ -14,26 +14,8 @@
   <li class="<%= 'active' if current_page?('/add-kaminari') %>">
     <%= link_to 'Add Kaminari', add_kaminari_path %>
   </li>
-  <li class="<%= 'active' if current_page?('/customize-views') %>">
-    <%= link_to 'Install Views & Customize', customize_views_path %>
-  </li>
-  <li class="<%= 'active' if current_page?('/presenter-pattern') %>">
-    <%= link_to 'Presenter Pattern', presenter_pattern_path %>
-  </li>
-</ul>
-
-<ul class="nav nav-sidebar">
-  <li class='disabled'>
-    <a href="#" ><h4>Upload files</h4></a>
-  </li>
-  <li class="<%= 'active' if current_page?('/install-carrierwave') %>">
-    <%= link_to 'Install Carrierwave', install_carrierwave_path %>
-  </li>
-  <li class="<%= 'active' if current_page?('/add-documents-to-projects') %>">
-    <%= link_to 'Add Documents to Projects', add_documents_to_projects_path %>
-  </li>
-  <li class="<%= 'active' if current_page?('/generate-thumbnails') %>">
-    <%= link_to 'Generate Thumbnails', generate_thumbnails_path %>
+  <li class="<%= 'active' if current_page?('/pagination-customize-views') %>">
+    <%= link_to 'Install Views & Customize', pagination_customize_views_path %>
   </li>
 </ul>
 
@@ -44,11 +26,48 @@
   <li class="<%= 'active' if current_page?('/action-mailer') %>">
     <%= link_to 'ActionMailer', action_mailer_path %>
   </li>
-  <li class="<%= 'active' if current_page?('/html-email-template') %>">
-    <%= link_to 'Add HTML Email Template', html_email_template_path %>
+  <li class="<%= 'active' if current_page?('/test-emails-with-letter-opener') %>">
+    <%= link_to 'Test emails with LetterOpener', '/test-emails-with-letter-opener' %>
   </li>
   <li class="<%= 'active' if current_page?('/threading-with-suckerpunch') %>">
     <%= link_to 'Threading with SuckerPunch', threading_with_suckerpunch_path %>
+  </li>
+</ul>
+
+
+<ul class="nav nav-sidebar">
+  <li class='disabled'>
+    <a href="#" ><h4>Assign Users to Projects</h4></a>
+  </li>
+  <li class="<%= 'active' if current_page?('/has-and-belongs-to-many') %>">
+    <%= link_to 'Has and Belongs to Many', '/has-and-belongs-to-many' %>
+  </li>
+  <li class="<%= 'active' if current_page?('/form-and-display') %>">
+    <%= link_to 'Form & Display', '/form-and-display' %>
+  </li>
+</ul>
+
+<ul class="nav nav-sidebar">
+  <li class='disabled'>
+    <a href="#" ><h4>Upload files</h4></a>
+  </li>
+  <li class="<%= 'active' if current_page?('/install-carrierwave') %>">
+    <%= link_to 'Install Carrierwave', install_carrierwave_path %>
+  </li>
+  <li class="<%= 'active' if current_page?('/user-profile') %>">
+    <%= link_to 'User Profile', '/user-profile' %>
+  </li>
+  <li class="<%= 'active' if current_page?('/add-user-avatar-form') %>">
+    <%= link_to 'Add User Avatar Form', '/add-user-avatar-form' %>
+  </li>
+  <li class="<%= 'active' if current_page?('/generate-thumbnails') %>">
+    <%= link_to 'Generate Thumbnails', generate_thumbnails_path %>
+  </li>
+  <li class="<%= 'active' if current_page?('/create-documents') %>">
+    <%= link_to 'Create Documents', create_documents_path %>
+  </li>
+  <li class="<%= 'active' if current_page?('/create-documentable-nested-form') %>">
+    <%= link_to 'Create Documentable Nested Form', '/create-documentable-nested-form' %>
   </li>
 </ul>
 
@@ -85,6 +104,15 @@
   </li>
   <li class="<%= 'active' if current_page?('/revamp-layout-with-sidebar') %>">
     <%= link_to 'Revamp Layout with Sidebar', '/revamp-layout-with-sidebar' %>
+  </li>
+</ul>
+
+<ul class="nav nav-sidebar">
+  <li class='disabled'>
+    <a href="#" ><h4>Presenter Pattern</h4></a>
+  </li>
+  <li class="<%= 'active' if current_page?('/customize-pagination') %>">
+    <%= link_to 'Customize Pagination', '/customize-pagination' %>
   </li>
 </ul>
 

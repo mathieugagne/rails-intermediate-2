@@ -1,3 +1,36 @@
 <h1 class="page-header">Install Carrierwave</h1>
+<blockquote>
+  <p>This gem provides a simple and extremely flexible way to upload files from Ruby applications. It works well with Rack based web applications, such as Ruby on Rails.</p>
+</blockquote>
 
-<h3>TO DO</h3>
+<h3>Step 1</h3>
+<blockquote>
+  <p>Add <code>carrierwave</code> to your Gemfile</p>
+  <pre><code>gem 'carrierwave'</code></pre>
+</blockquote>
+
+<h3>Step 2</h3>
+<blockquote>
+  <p>Run Bundler and restart the server</p>
+  <pre><code>bundle ; rails s</code></pre>
+</blockquote>
+
+<h3>Step 3</h3>
+<blockquote>
+  <p>Add a database column to hold the reference to the uploaded file</p>
+  <pre><code>rails g migration AddAvatarToUsers avatar</code></pre>
+  <pre><code>rake db:migrate</code></pre>
+</blockquote>
+
+<h3>Step 3</h3>
+<blockquote>
+  <p>Generate a <code>AvatarUploader</code> class to handle the file, transfer and image manipulation operations</p>
+  <pre><code>rails g uploader Avatar</code></pre>
+</blockquote>
+
+<h3>Step 4</h3>
+<blockquote>
+  <p>Mount uploader on <code>avatar</code></p>
+  <p>In <code>app/models/user.rb</code></p>
+  <pre><code>mount_uploader :avatar, AvatarUploader</code></pre>
+</blockquote>

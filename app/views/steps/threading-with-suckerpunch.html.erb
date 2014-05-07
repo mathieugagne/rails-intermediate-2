@@ -1,3 +1,54 @@
 <h1 class="page-header">Threading with SuckerPunch</h1>
+<blockquote>
+  <p>Sucker Punch is a single-process Ruby asynchronous processing library.</p>
+  <p>Sucker Punch is perfect for asynchronous processes like emailing, data crunching, or social platform manipulation. No reason to hold up a user when you can do these things in the background within the same process as your web application...</p>
+</blockquote>
 
-<h3>TO DO</h3>
+<h3>Goals</h3>
+<blockquote>
+  <ul>
+    <li>Install <code>sucker_punch</code></li>
+    <li>Create a new worker to send emails</li>
+    <li>Replace comment delivery with worker call</li>
+  </ul>
+</blockquote>
+
+<h3>Step 1</h3>
+<blockquote>
+  <p>Add <code>sucker_punch</code> to your Gemfile</p>
+  <p>Run bundler</p>
+  <pre><code>gem 'sucker_punch'</code></pre>
+  <pre><code>bundle</code></pre>
+</blockquote>
+
+<h3>Step 2</h3>
+<blockquote>
+  <p>Create a <code>workers</code> directory where you will store your worker classes</p>
+  <pre><code>mkdir app/workers</code></pre>
+</blockquote>
+
+<h3>Step 3</h3>
+<blockquote>
+  <p>Add a new worker class <code>comment_notifier_worker.rb</code></p>
+  <pre><code>class CommentNotifierWorker
+  include SuckerPunch::Job
+
+  def perform(comment_id, subject)
+    comment = Comment.find(comment_id)
+    Notifier.notify_users(comment, subject).deliver
+  end
+
+end</code></pre>
+</blockquote>
+
+<h3>Step 4</h3>
+<blockquote>
+  <p>Restart you server to pick up the new workers directory change</p>
+  <pre><code>rails s</code></pre>
+</blockquote>
+
+<h3>Step 5</h3>
+<blockquote>
+  <p>Replace the call to <code>Notifier</code> by a call to <code>CommentNotifierWorker</code></p>
+  <pre><code>CommentNotifierWorker.new.async.perform(@comment.id, subject)</code></pre>
+</blockquote>

@@ -1,3 +1,44 @@
 <h1 class="page-header">ActionMailer</h1>
 
-<h3>TO DO</h3>
+<blockquote>
+  <p>Action Mailer allows you to send emails from your application using mailer classes and views. Mailers work very similarly to controllers. They inherit from ActionMailer::Base and live in app/mailers, and they have associated views that appear in app/views.</p>
+</blockquote>
+
+<h3>Goals</h3>
+<blockquote>
+  <ul>
+    <li>Create a new ActionMailer class</li>
+    <li>Create ActionMailer views</li>
+    <li>Test our emails</li>
+    <li>Delay delivery of email and send from new thread</li>
+  </ul>
+</blockquote>
+
+<h3>Step 1</h3>
+<blockquote>
+  <p>Use the <code>mailer</code> generator to get going</p>
+  <pre><code>rails g mailer Notifier notify_users</code></pre>
+</blockquote>
+
+<h3>Step 2</h3>
+<blockquote>
+  <p>Configure <code>Notifier</code> to send emails to all users</p>
+  <pre><code>mail to: User.pluck(:email)</code></pre>
+</blockquote>
+
+<h3>Step 3</h3>
+<blockquote>
+  <p>Expect <code>comment</code>, <code>user</code> and <code>about</code> variables as parameters and revamp accordingly</p>
+  <pre><code>  def notify_users comment, subject
+  @comment = comment
+  @subject = subject
+  mail to: User.pluck(:email), subject: @subject
+end</code></pre>
+</blockquote>
+
+<h3>Step 4</h3>
+<blockquote>
+  <p>Instantiate a new <code>mailer</code> instance on <code>comments#create</code></p>
+  <pre><code>subject = "#{current_user.email} commented about Project: #{@project.title}"
+Notifier.notify_users(@comment, subject).deliver</code></pre>
+</blockquote>

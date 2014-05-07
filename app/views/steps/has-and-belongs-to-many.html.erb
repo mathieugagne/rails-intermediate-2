@@ -1,0 +1,56 @@
+<h1 class="page-header">Has and Belongs to Many</h1>
+<blockquote>
+  <p>A <code>has_and_belongs_to_many</code> association creates a direct many-to-many connection with another model, with no intervening model.</p>
+  <p>Specifies a many-to-many relationship with another class. This associates two classes via an intermediate join table. Unless the join table is explicitly specified as an option, it is guessed using the lexical order of the class names. So a join between Developer and Project will give the default join table name of “developers_projects” because “D” precedes “P” alphabetically.</p>
+  <p><%= image_tag 'habtm.png', alt: '' %></p>
+  <p>There is another way of defining many-to-many association and that is <code>has_many :through</code></p>
+  <p>A <code>has_many :through</code> association is often used to set up a many-to-many connection with another model. This association indicates that the declaring model can be matched with zero or more instances of another model by proceeding through a third model.</p>
+  <p><%= image_tag 'has_many_through.png', alt: '' %></p>
+</blockquote>
+
+<h3>Goals</h3>
+<blockquote>
+  <p>Turns out not everyone wants to get notified of new comments.</p>
+  <p>While we don't want to let the user decide, we can surely send emails only to the users assigned to the project.</p>
+  <ul>
+    <li>Create a migration for a users to projects many to many relationship</li>
+    <li>Add user assignment to project form</li>
+    <li>Send an email only to those who are assigned to the project</li>
+  </ul>
+</blockquote>
+
+<h3>Step 1</h3>
+<blockquote>
+  <p>Use the <code>migration</code> generator to create a new migration for our many-to-many relationship</p>
+  <pre><code>rails g migration CreateProjectsUsers user:references project:references</code></pre>
+</blockquote>
+
+<h3>Step 2</h3>
+<blockquote>
+  <p>Remove <code>id</code> primary key on our association table</p>
+  <pre><code>create_table :projects_users, id: false do |t|</code></pre>
+</blockquote>
+
+<h3>Step 3</h3>
+<blockquote>
+  <p>Run the migration</p>
+  <pre><code>rake db:migrate</code></pre>
+</blockquote>
+
+<h3>Step 4</h3>
+<blockquote>
+  <p>Association users and projects</p>
+  <p>In <code>app/models/user.rb</code></p>
+  <pre><code>has_and_belongs_to_many :projects</code></pre>
+  <p>In <code>app/models/project.rb</code></p>
+  <pre><code>has_and_belongs_to_many :users</code></pre>
+</blockquote>
+
+<h3>Step 5</h3>
+<blockquote>
+  <p>Test in console</p>
+  <pre><code>$ rails c
+project = Project.first
+project.users << User.first
+</code></pre>
+</blockquote>

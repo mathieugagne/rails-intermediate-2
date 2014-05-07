@@ -1,0 +1,41 @@
+<h1 class="page-header">Add User Avatar Form</h1>
+
+<h3>Step 1</h3>
+<blockquote>
+  <p>Add route to update</p>
+  <pre><code>resources :users, only: :update</code></pre>
+</blockquote>
+
+<h3>Step 2</h3>
+<blockquote>
+  <p>Add <code>update</code> action to <code>UsersController</code></p>
+  <pre><code>def update
+  if current_user.update(user_params)
+    redirect_to profile_path, notice: 'Profile was successfully updated.'
+  else
+    redirect_to profile_path, alert: 'Oups. Something went wrong.'
+  end
+end</code></pre>
+</blockquote>
+
+<h3>Step 3</h3>
+<blockquote>
+  <p>Specify <code>strong_parameters</code> for <code>user_params</code></p>
+  <pre><code>private
+
+def user_params
+  params.require(:user).permit(:avatar)
+end</code></pre>
+</blockquote>
+
+<h3>Step 4</h3>
+<blockquote>
+  <p>Split view in 2 columns.</p>
+  <p>Add User form with avatar</p>
+  <pre><code>&lt;h3&gt;Avatar&lt;/h3&gt;
+&lt;%= simple_form_for current_user do |f| %&gt;
+  &lt;%= image_tag current_user.avatar_url, alt: '', class: 'thumbnail' if current_user.avatar? %&gt;
+  &lt;%= f.input :avatar %&gt;
+  &lt;%= f.submit 'Update Profile', class: 'btn btn-primary' %&gt;
+&lt;% end %&gt;</code></pre>
+</blockquote>

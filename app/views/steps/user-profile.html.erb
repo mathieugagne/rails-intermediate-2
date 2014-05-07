@@ -1,0 +1,52 @@
+<h1 class="page-header">User Profiles</h1>
+<blockquote>
+  <p>Let everyone chose their own avatar.</p>
+  <p>Once a user is logged in, he has access to a profile view where he can edit his details and his avatar.</p>
+</blockquote>
+
+<h3>Step 1</h3>
+<blockquote>
+  <p>Add UsersController with a <code>profile</code> action</p>
+  <pre><code>rails g controller users profile</code></pre>
+</blockquote>
+
+<h3>Step 2</h3>
+<blockquote>
+  <p>Fix route</p>
+  <pre><code>get '/profile', to: 'users#profile'</code></pre>
+</blockquote>
+
+<h3>Step 3</h3>
+<blockquote>
+  <p>Add link to profile in header navigation</p>
+  <pre><code>&lt;li&gt;&lt;%= link_to icon_tag('user fa-2x'), profile_path %&gt;&lt;/li&gt;</code></pre>
+</blockquote>
+
+<h3>Step 4</h3>
+<blockquote>
+  <p>Deny users that are not logged in.</p>
+  <pre><code>raise ActionController::RoutingError.new('Not Found') unless user_signed_in?</code></pre>
+</blockquote>
+
+<h3>Step 5</h3>
+<blockquote>
+  <p>Instantiate <code>@projects</code> with current_user's projects</p>
+  <pre><code>@projects = current_user.projects</code></pre>
+</blockquote>
+
+<h3>Step 6</h3>
+<blockquote>
+  <p>Add view</p>
+  <pre><code>&lt;h1 class="page-header"&gt;&lt;%= current_user.email %&gt;'s Profile&lt;/h1&gt;
+
+&lt;h3&gt;Currently working on&lt;/h3&gt;
+
+&lt;ul class="list-group"&gt;
+  &lt;% @projects.each do |p| %&gt;
+    &lt;li class="list-group-item"&gt;
+      &lt;span class="pull-right"&gt;&lt;%= project_status_label(p.status) %&gt;&lt;/span&gt;
+      &lt;%= p.title %&gt;
+    &lt;/li&gt;
+  &lt;% end %&gt;
+&lt;/ul&gt;</code></pre>
+</blockquote>

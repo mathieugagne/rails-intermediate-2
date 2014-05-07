@@ -1,0 +1,31 @@
+<h1 class="page-header">Customize Views</h1>
+
+<blockquote>
+  <p>Could look a little prettier than that.</p>
+  <p><%= image_tag 'pagination.png', alt: '' %></p>
+</blockquote>
+
+<h3>Goals</h3>
+<blockquote>
+  <p>Revamp pagination to get a different look.</p>
+  <p><%= image_tag 'pagination_3.png', alt: '' %></p>
+</blockquote>
+
+<h3>Step 1</h3>
+<blockquote>
+  <p>Import views from <code>kaminari</code></p>
+  <pre><code>rails g kaminari:views bootstrap</code></pre>
+</blockquote>
+
+<h3>Step 2</h3>
+<blockquote>
+  <p>Fix <code>paginator</code> partial to fit Twitter Bootstrap 3 requirements.</p>
+  <p>Move the <code>pagination</code> class to <code>ul</code></p>
+  <pre><code>&lt;ul class='pagination'&gt;...&lt;/ul&gt;</code></pre>
+</blockquote>
+
+<h3>Step 3</h3>
+<blockquote>
+  <p>Add pagination total count and other useful information under the main title.</p>
+  <pre><code>&lt;p&gt;&lt;%= page_entries_info @projects %&gt;&lt;/p&gt;</code></pre>
+</blockquote>
