@@ -1,3 +1,57 @@
 <h1 class="page-header">Add Search Form</h1>
 
-<h3>TO DO</h3>
+
+<h3>Step 1</h3>
+<blockquote>
+  <p>Add projects search action to routes.</p>
+  <pre><code>get :search, on: :collection</code></pre>
+</blockquote>
+
+<h3>Step 2</h3>
+<blockquote>
+  <p>Redirect projects index to search action.</p>
+  <pre><code>redirect_to search_projects_path</code></pre>
+</blockquote>
+
+<h3>Step 3</h3>
+<blockquote>
+  <p>Add projects search action to controller.</p>
+  <pre><code>def search
+  @search = Project.search do
+    fulltext params[:q]
+    order_by params[:sort] || :title, params[:direction] || :asc
+    paginate page: params[:page], per_page: 10
+  end
+  @projects = @search.results
+end</code></pre>
+</blockquote>
+
+<h3>Step 3</h3>
+<blockquote>
+  <p>Rename <code>index.html.erb</code> to <code>search.html.erb</code></p>
+</blockquote>
+
+<h3>Step 4</h3>
+<blockquote>
+  <p>Add search form</p>
+  <pre><code>&lt;div class="well"&gt;
+  &lt;%= simple_form_for :search, url: search_projects_path, method: :get do |f| %&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="col-md-10"&gt;
+        &lt;%= f.input :q, label: false, required: false, autofocus: true, input_html: {name: :q, value: params[:q]} %&gt;
+      &lt;/div&gt;
+      &lt;div class="col-md-2"&gt;
+        &lt;%= button_tag(type: 'submit', class: "btn btn-default") do %&gt;
+          &lt;%= icon_tag('search') %&gt; Search
+        &lt;% end -%&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;% end -%&gt;
+&lt;/div&gt;</code></pre>
+</blockquote>
+
+<h3>Step 5</h3>
+<blockquote>
+  <p>Keep search query parameter when sorting with table headers</p>
+  <pre><code>link_to title, { sort: column, direction: direction, q: params[:q] }</code></pre>
+</blockquote>

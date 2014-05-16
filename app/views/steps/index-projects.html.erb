@@ -5,13 +5,17 @@
 <blockquote>
   <p>Tell Sunspot what you would like to be searchable</p>
   <pre><code>searchable do
-  text :title, :description
+  text :title, :description, :status
   text :comments do
     comments.map(&:text).join(' ')
   end
   text :assignees do
     users.map(&:email).join(' ')
   end
+  string :title
+  string :description
+  string :status
+  integer :comments_count
 end</code></pre>
 </blockquote>
 

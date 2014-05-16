@@ -84,36 +84,8 @@
   <li class="<%= 'active' if current_page?('/add-search-form') %>">
     <%= link_to 'Add Search Form', '/add-search-form' %>
   </li>
-  <li class="<%= 'active' if current_page?('/facet-tags') %>">
-    <%= link_to 'Facet Tags', '/facet-tags' %>
-  </li>
-  <li class="<%= 'active' if current_page?('/revamp-layout-with-sidebar') %>">
-    <%= link_to 'Revamp Layout with Sidebar', '/revamp-layout-with-sidebar' %>
-  </li>
-</ul>
-
-<ul class="nav nav-sidebar">
-  <li class='disabled'>
-    <a href="#" ><h4>Tags</h4></a>
-  </li>
-  <li class="<%= 'active' if current_page?('/install-ActsAsTaggableOn') %>">
-    <%= link_to 'Install ActsAsTaggableOn', install_ActsAsTaggableOn_path %>
-  </li>
-  <li class="<%= 'active' if current_page?('/install-select2-rails') %>">
-    <%= link_to 'Install select2-rails', install_select2_rails_path %>
-  </li>
-  <li class="<%= 'active' if current_page?('/autocomplete-tags') %>">
-    <%= link_to 'Autocomplete Tags', autocomplete_tags_path %>
-  </li>
-</ul>
-
-
-<ul class="nav nav-sidebar">
-  <li class='disabled'>
-    <a href="#" ><h4>Presenter Pattern</h4></a>
-  </li>
-  <li class="<%= 'active' if current_page?('/customize-pagination') %>">
-    <%= link_to 'Customize Pagination', '/customize-pagination' %>
+  <li class="<%= 'active' if current_page?('/facet-status') %>">
+    <%= link_to 'Facet Status', '/facet-status' %>
   </li>
 </ul>
 
@@ -121,7 +93,9 @@
   <li class='disabled'>
     <a href="#" ><h4>Want more?</h4></a>
   </li>
-  <li class="<%= 'active' if current_page?('/add-ckeditor-wysiwyg') %>">
-    <%= link_to 'Add CKEditor WYSIWYG', '/add-ckeditor-wysiwyg' %>
-  </li>
+  <li class='disabled'><%= link_to 'Facet Assignees', '' %></li>
+  <li class='disabled'><%= link_to 'Add CKEditor WYSIWYG', '' %></li>
+  <li class='disabled'><%= link_to 'Add tags with ActsAsTaggableOn', '' %></li>
+  <li class='disabled'><%= link_to 'Install select2-rails gem to autocomplete tags', '' %></li>
+  <li class='disabled'><%= link_to 'Customize Pagination with the Presenter pattern', '' %></li>
 </ul>

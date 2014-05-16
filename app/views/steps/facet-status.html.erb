@@ -1,0 +1,41 @@
+<h1 class="page-header">Facet Tags</h1>
+
+<h3>Step 1</h3>
+<blockquote>
+  <p>Change <code>container</code> class to <code>container-fluid</code> in <code>layouts/application</code> and <code>layouts/_header</code></p>
+</blockquote>
+
+<h3>Step 2</h3>
+<blockquote>
+  <p>Add <code>status</code> facet to search block</p>
+  <pre><code>facet :status
+with(:status, params[:status]) if params[:status].present?</code></pre>
+</blockquote>
+
+<h3>Step 3</h3>
+<blockquote>
+  <p>Split <code>search</code> view to have a sidebar and add status facet panel.</p>
+  <pre><code>&lt;div class="panel panel-default"&gt;
+  &lt;div class="panel-heading"&gt;Status&lt;/div&gt;
+  &lt;ul class="list-group"&gt;
+    &lt;% @search.facet(:status).rows.each do |facet| %&gt;
+      &lt;li class="list-group-item"&gt;
+        &lt;span class="badge"&gt;&lt;%= facet.count %&gt;&lt;/span&gt;
+        &lt;%= link_to project_status_label(facet.value), params.merge(status: facet.value) %&gt;
+      &lt;/li&gt;
+    &lt;% end -%&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+</blockquote>
+
+<h3>Step 4</h3>
+<blockquote>
+  <p>Add a link to reset the status selection.</p>
+  <pre><code>&lt;%= link_to icon_tag('refresh'), params.except(:status), class: 'pull-right' %&gt;</code></pre>
+</blockquote>
+
+<h3>Step 5</h3>
+<blockquote>
+  <p>Persist status selection on new searches.</p>
+  <pre><code>&lt;%= f.input :status, as: :hidden, input_html: {name: :status, value: params[:status]} %&gt;</code></pre>
+</blockquote>

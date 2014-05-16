@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get '/install-solr-with-sunspot', to: 'steps#install-solr-with-sunspot'
   get '/index-projects', to: 'steps#index-projects'
   get '/add-search-form', to: 'steps#add-search-form'
-  get '/facet-tags', to: 'steps#facet-tags'
+  get '/facet-status', to: 'steps#facet-status'
   get '/revamp-layout-with-sidebar', to: 'steps#revamp-layout-with-sidebar'
   get '/customize-pagination', to: 'steps#customize-pagination'
   get '/next-steps', to: 'steps#next_steps'
