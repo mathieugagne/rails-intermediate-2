@@ -1,3 +1,43 @@
 <h1 class="page-header">Install Solr with Sunspot</h1>
 
-<h3>TO DO</h3>
+<blockquote>
+  <p><%= link_to 'Sunspot', 'https://github.com/sunspot/sunspot' %> is a Ruby library for expressive, powerful interaction with the Solr search engine. Sunspot is built on top of the RSolr library, which provides a low-level interface for Solr interaction; Sunspot provides a simple, intuitive, expressive DSL backed by powerful features for indexing objects and searching for them.</p>
+</blockquote>
+
+<h3>Step 1</h3>
+<blockquote>
+  <p>Add sunspot gem</p>
+  <pre><code>gem 'sunspot_rails'
+gem 'sunspot_solr'</code></pre>
+  <pre><code>bundle ; rails s</code></pre>
+</blockquote>
+
+<h3>Step 2</h3>
+<blockquote>
+  <p>Run the installer</p>
+  <pre><code>rails g sunspot_rails:install</code></pre>
+</blockquote>
+
+<h3>Step 3</h3>
+<blockquote>
+  <p>Add <code>sunspot_solr</code> rake tasks to your <code>Rakefile</code></p>
+  <pre><code>require 'sunspot/solr/tasks'</code></pre>
+</blockquote>
+
+<h3>Step 4</h3>
+<blockquote>
+  <p>Add foreman gem in <code>development</code> group</p>
+  <pre><code>gem 'foreman'</code></pre>
+</blockquote>
+
+<h3>Step 5</h3>
+<blockquote>
+  <p>Create a <code>Procfile</code></p>
+  <pre><code>solr: bundle exec rake sunspot:solr:run</code></pre>
+</blockquote>
+
+<h3>Step 6</h3>
+<blockquote>
+  <p>Start foreman in a different tab and restart your server</p>
+  <pre><code>bundle exec foreman start</code></pre>
+</blockquote>
