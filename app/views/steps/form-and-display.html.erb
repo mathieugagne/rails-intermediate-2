@@ -2,6 +2,12 @@
 
 <h3>Step 1</h3>
 <blockquote>
+  <p>Populate the database with fake users.</p>
+  <pre><code>rake users:fake</code></pre>
+</blockquote>
+
+<h3>Step 2</h3>
+<blockquote>
   <p>Display users assigned to projects. Add a helper method to <code>ProjectsHelper</code> to collect the list of emails.</p>
   <pre><code>def project_user_list project
   list = project.users.map(&:email)
@@ -9,19 +15,19 @@
 end</code></pre>
 </blockquote>
 
-<h3>Step 2</h3>
+<h3>Step 3</h3>
 <blockquote>
   <p>Use <code>project_user_list</code> to display assigned users in <code>index</code> and <code>show</code></p>
   <pre><code>&lt;%= project_user_list(project) %&gt;</code></pre>
 </blockquote>
 
-<h3>Step 3</h3>
+<h3>Step 4</h3>
 <blockquote>
   <p>Add <code>users</code> association with <code>simple_form</code> helper method</p>
   <pre><code>&lt;%= f.association :users, label_method: :email %&gt;</code></pre>
 </blockquote>
 
-<h3>Step 4</h3>
+<h3>Step 5</h3>
 <blockquote>
   <p>Add <code>:user_ids</code> to the list of permitted attributes in <code>project_params</code></p>
   <pre><code>def project_params
