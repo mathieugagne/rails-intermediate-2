@@ -63,27 +63,12 @@
   <li class="<%= 'active' if current_page?('/generate-thumbnails') %>">
     <%= link_to 'Generate Thumbnails', generate_thumbnails_path %>
   </li>
-  <li class="<%= 'active' if current_page?('/create-documents') %>">
+<!--   <li class="<%= 'active' if current_page?('/create-documents') %>">
     <%= link_to 'Create Documents', create_documents_path %>
   </li>
   <li class="<%= 'active' if current_page?('/create-documentable-nested-form') %>">
     <%= link_to 'Create Documentable Nested Form', '/create-documentable-nested-form' %>
-  </li>
-</ul>
-
-<ul class="nav nav-sidebar">
-  <li class='disabled'>
-    <a href="#" ><h4>Tags</h4></a>
-  </li>
-  <li class="<%= 'active' if current_page?('/install-ActsAsTaggableOn') %>">
-    <%= link_to 'Install ActsAsTaggableOn', install_ActsAsTaggableOn_path %>
-  </li>
-  <li class="<%= 'active' if current_page?('/install-select2-rails') %>">
-    <%= link_to 'Install select2-rails', install_select2_rails_path %>
-  </li>
-  <li class="<%= 'active' if current_page?('/autocomplete-tags') %>">
-    <%= link_to 'Autocomplete Tags', autocomplete_tags_path %>
-  </li>
+  </li> -->
 </ul>
 
 <ul class="nav nav-sidebar">
@@ -106,6 +91,22 @@
     <%= link_to 'Revamp Layout with Sidebar', '/revamp-layout-with-sidebar' %>
   </li>
 </ul>
+
+<ul class="nav nav-sidebar">
+  <li class='disabled'>
+    <a href="#" ><h4>Tags</h4></a>
+  </li>
+  <li class="<%= 'active' if current_page?('/install-ActsAsTaggableOn') %>">
+    <%= link_to 'Install ActsAsTaggableOn', install_ActsAsTaggableOn_path %>
+  </li>
+  <li class="<%= 'active' if current_page?('/install-select2-rails') %>">
+    <%= link_to 'Install select2-rails', install_select2_rails_path %>
+  </li>
+  <li class="<%= 'active' if current_page?('/autocomplete-tags') %>">
+    <%= link_to 'Autocomplete Tags', autocomplete_tags_path %>
+  </li>
+</ul>
+
 
 <ul class="nav nav-sidebar">
   <li class='disabled'>

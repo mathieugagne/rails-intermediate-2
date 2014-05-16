@@ -1,3 +1,58 @@
 <h1 class="page-header">Generate Thumbnails</h1>
 
-<h3>TO DO</h3>
+<h3>Step 1</h3>
+<blockquote>
+  <p>Add <code>mini_magick</code> gem</p>
+  <pre><code>gem 'mini_magick'</code></pre>
+  <pre><code>bundle ; rails s</code></pre>
+</blockquote>
+
+<h3>Step 2</h3>
+<blockquote>
+  <p>Uncomment or add the thumb version process in <code>AvatarUploader</code> with <code>MiniMagick</code></p>
+  <pre><code>include CarrierWave::MiniMagick</code></pre>
+  <pre><code>version :thumb do
+  process :resize_and_pad => [40, 40]
+end</code></pre>
+</blockquote>
+
+<h3>Step 3 (optional)</h3>
+<blockquote>
+  <p>Process avatars again if you already uploaded an image</p>
+  <pre><code>$ rails c
+User.all.map{|u| u.avatar.recreate_versions! if u.avatar.present?}</code></pre>
+</blockquote>
+
+<h3>Step 4</h3>
+<blockquote>
+  <p>Add default avatar in <code>AvatarUploader</code></p>
+  <pre><code>ActionController::Base.helpers.asset_path("default_profile_image.png")</code></pre>
+</blockquote>
+
+<h3>Step 5</h3>
+<blockquote>
+  <p>Display uploaded avatars</p>
+  <pre><code>def project_user_list project
+  avatar_list = project.users.map{|u| avatar_image_tag(u)}
+  avatar_list.any? ? project_user_list_tag(avatar_list) : empty_list_tag
+end
+
+private
+
+def project_user_list_tag(avatar_list)
+  content_tag(:ul, avatar_list.join.html_safe, class: 'list-inline')
+end
+
+def empty_list_tag
+  content_tag(:span, 'None assigned.', class: 'text-muted')
+end
+
+def avatar_image_tag user
+  content_tag(:li, image_tag(user.avatar_url(:thumb), alt: user.email))
+end</code></pre>
+</blockquote>
+
+<h3>Step 6 (optional)</h3>
+<blockquote>
+  <p>Add <code>public/uploads</code> folder to .gitignore</p>
+</blockquote>
