@@ -26,7 +26,7 @@ User.all.map{|u| u.avatar.recreate_versions! if u.avatar.present?}</code></pre>
 <h3>Step 4</h3>
 <blockquote>
   <p>Add default avatar in <code>AvatarUploader</code></p>
-  <pre><code>ActionController::Base.helpers.asset_path("default_profile_image.png")</code></pre>
+  <pre><code>"public/images/profile/default_#{Rand.new(0,9)}.jpg"</code></pre>
 </blockquote>
 
 <h3>Step 5</h3>
@@ -52,7 +52,15 @@ def avatar_image_tag user
 end</code></pre>
 </blockquote>
 
-<h3>Step 6 (optional)</h3>
+<h3>Step 6</h3>
+<blockquote>
+  <p>Style avatar list so it doesn't break</p>
+  <pre><code>.list-inline {
+  white-space: nowrap;
+}</code></pre>
+</blockquote>
+
+<h3>Step 7 (optional)</h3>
 <blockquote>
   <p>Add <code>public/uploads</code> folder to .gitignore</p>
 </blockquote>
